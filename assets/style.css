@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#timer-container {
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    width: 50px;
+    height: 40px;
+    margin: 10px 10px 0 auto;
+
+}
+#timer{
+   text-align: center;
+}

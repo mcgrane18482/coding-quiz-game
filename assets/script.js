@@ -1,13 +1,28 @@
 var timerEl = document.querySelector('#timer');
-var count = 10;
+var count = 60;
+var body = document.body;
+var startBtnEl = document.querySelector('#start-btn')
+var quizbody = document.querySelector('#quiz-wrap')
 
-var timer= setInterval(countDown, 1000)
+timerEl.classList.add('hide');
 
-function countDown() {
-    count--;
-    timerEl.innerText = count;
+function startGame() {
+    startBtnEl.classList.add('hide');
+    timerEl.classList.remove('hide');
+    var timer = setInterval(countDown, 1000)
 
-    if(count===0){
-        clearInterval(timer);
+
+    function countDown() {
+        count--;
+        timerEl.innerText = count;
+
+        if (count === 0) {
+            clearInterval(timer);
+        }
     }
+
 }
+
+startBtnEl.addEventListener('click', startGame);
+
+

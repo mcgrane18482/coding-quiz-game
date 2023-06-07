@@ -3,6 +3,7 @@
     box-sizing: border-box;
 }
 
+
 #timer-container {
     border: 2px solid rgba(0, 0, 0, 0.6);
     border-radius: 10px;
@@ -13,4 +14,8 @@
 }
 #timer{
    text-align: center;
+}
+
+.hide {
+    display: none;
 }

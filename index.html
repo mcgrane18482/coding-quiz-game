@@ -19,18 +19,28 @@
 
     <div id="start-screen" class="flex">
         <h2>Junior Developer Quiz Game</h2>
-        <p>You will have 60 seconds to answer 5 questions. Answer all questions correctly to win! Total wins and losses will be saved.</p>
+        <p>You will have 60 seconds to answer 5 questions. Answer all questions correctly to win! </p>
+        <p>Be careful, incorrect answers will deduct your time remaining!</p>
         <button id='start-btn'>Start</button>
     </div>
 
     <div id="quiz-wrap" class="hide">
-        <h3>What is the purpose of the addEventListener method in JavaScript?</h3>
+        <h3 id="question-display">What is the purpose of the addEventListener method in JavaScript?</h3>
         <div class="choices">
             <button>To add a new HTML element to the document</button>
             <button>To detect when a user interaction occurs</button>
             <button>To change the style of an element</button>
             <button>44</button>
         </div>
+        <p id="message"></p>
+    </div>
+    <div id = "end-screen" class ="hide">
+        <h2>All done!</h2>
+        <p>message</p>
+        <form id = "initialsInput">
+            <input type="text" id = "initials">
+            <button>Submit</button>
+        </form>
     </div>
 
     <script src="assets/questions.js"></script>

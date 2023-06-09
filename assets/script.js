@@ -1,5 +1,4 @@
 var timerEl = document.querySelector('#timer');
-var timerContainerEl = document.querySelector('#timer-container')
 var body = document.body;
 var startBtnEl = document.querySelector('#start-btn')
 var gameTitle = document.querySelector('#start-screen h2')
@@ -11,22 +10,13 @@ var timer;
 
 // When the user clicks the start button, then I need the start button to disappear and the timer to appear
 
-function hideStartScreen(){
-    startScreen.classList.remove('flex')
-    startScreen.classList.add('hide');
-    startBtnEl.classList.remove('flex');
-    startBtnEl.classList.add('hide');
-    gameTitle.classList.remove('flex');
-    gameTitle.classList.add('hide');
-}
-
 function startGame() {
-    hideStartScreen();
-    timerContainerEl.classList.remove('hide');
+    startScreen.classList.add('hide');
+    quizScreen.classList.remove('hide');
+    timerEl.classList.remove('hide');
     quizScreen.classList.add('flex');
     timer = setInterval(countDown, 1000);
     countDown();
-
 }
 
 function countDown() {
@@ -40,5 +30,3 @@ function countDown() {
 }
 
 startBtnEl.addEventListener('click', startGame);
-
-

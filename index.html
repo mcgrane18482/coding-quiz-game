@@ -6,30 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
     <header>
-        <div id="timer-container">
+        <div id="timer-container" class="hide">
             <h1 id="timer">60</h1>
         </div>
-        
     </header>
-    
-    <button id = 'start-btn'>Start</button>
-    
-    <div id="quiz-wrap" class = "hide">
-        <h3>What is 4 times 4?</h3>
+
+    <div id="start-screen" class="flex">
+        <h2>Junior Developer Quiz Game</h2>
+        <p>You will have 60 seconds to answer 5 questions. Answer all questions correctly to win! Total wins and losses will be saved.</p>
+        <button id='start-btn'>Start</button>
+    </div>
+
+    <div id="quiz-wrap" class="hide">
+        <h3>What is the purpose of the addEventListener method in JavaScript?</h3>
         <div class="choices">
-            <button>16</button>
-            <button>64</button>
-            <button>24</button>
+            <button>To add a new HTML element to the document</button>
+            <button>To detect when a user interaction occurs</button>
+            <button>To change the style of an element</button>
             <button>44</button>
         </div>
-    </div>    
-    
+    </div>
+
     <script src="assets/script.js"></script>
+
 </body>
 
 </html>

@@ -1,8 +1,61 @@
 *{
     margin: 0;
     box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif
+}
+body {
+    height: 100%;
+}
+html {
+    height: 100%;
 }
 
+.hide {
+    display: none;
+}
+
+.flex {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ENTRY SCREEN STYLES */
+#start-screen {
+    height: 100%;
+}
+
+#start-screen h2 {
+    font-family: 'Geologica ', sans-serif;
+}
+
+#start-screen p {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width: 400px;
+    text-align: center;
+}
+
+#start-btn {
+    font-family: 'Verdana', sans-serif;
+    background-color: rgb(115, 194, 220);
+    color: white;
+    margin-top: 10px;
+    padding: 10px 30px;
+    border: 1px solid #DFDFDF;
+    cursor: pointer;
+    line-height: 20px;
+    font-size: 16px;
+    width: 100%;
+    justify-content: center;
+    max-width: 300px;
+}
+
+/* GAME SCREEN STYLES */
+#quiz-wrap {
+    height: 100%;
+}
 
 #timer-container {
     border: 2px solid rgba(0, 0, 0, 0.6);
@@ -10,12 +63,39 @@
     width: 50px;
     height: 40px;
     margin: 10px 10px 0 auto;
-
 }
+
 #timer{
    text-align: center;
 }
 
-.hide {
-    display: none;
+h3{
+    font-family:Arial, Helvetica, sans-serif;
+    max-width: 400px;
+    text-align: center;
 }
+
+.choices {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.choices button {
+    padding: 10px 30px;
+    background-color: rgba(240, 240, 240, 0.26);
+    border: 1px solid #DFDFDF;
+    cursor: pointer;
+    line-height: 20px;
+    font-size: 16px;
+    width: 100%;
+    justify-content: center;
+    max-width: 300px;
+}
+
+.choices button:hover {
+  background-color: #FFFFFF;
+  border-color: rgba(0, 0, 0, 0.19);
+}
+

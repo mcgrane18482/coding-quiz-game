@@ -29,4 +29,29 @@ var questionData = [
         choices: ['In a row left to right','In a column top to bottom','There is no default','In a table format'],
         answer: 'In a row left to right'
     },
+    {
+        question: 'Arrays in JavaScript are used to store ________',
+        choices: ['numbers only','strings only','objects only','any value type'],
+        answer: 'any value type'
+    },
+    {
+        question: 'Which of the following tags is used for inserting the largest heading in HTML?',
+        choices: ['head','<h1>','<h5>','<large>'],
+        answer: '<h1>'
+    },
+    {
+        question: 'In which part of the HTML is metadata contained?',
+        choices: ['Head tag', 'Body tag', 'Title tag', 'Closing tag'],
+        answer: 'Head tag'
+    },
+    {
+        question: 'Where in an HTML document is the correct place to refer to an external style sheet?',
+        choices: ['At the end of the document', 'In the body section', 'In the head section', 'In the link section'],
+        answer: 'In the head section'
+    },
+    {
+        question: 'Which is the correct CSS syntax?',
+        choices: ['body:color=black;', '{body:color=black;}', 'body {color:black;}', '{body} color=black;'],
+        answer: 'body {color:black;}'
+    },
 ]

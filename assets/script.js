@@ -12,6 +12,7 @@ var resultText = document.querySelector('#end-screen h2');
 var endingInstructions = document.querySelector('#end-instructions')
 var initialsForm = document.querySelector('#initialsInput');
 var initialsInput = document.querySelector('#initials');
+var scoreScreen = document.querySelector('#score-screen');
 var currentQuestionIndex = 0;
 var time = 60;
 var timer;
@@ -82,6 +83,7 @@ function endScreenShow(){
     clearInterval(timer);
 }
 
+// When the user clicks submit, we want to save thier name value 
 
 function saveScore (event) {
     event.preventDefault();
@@ -95,15 +97,21 @@ function saveScore (event) {
     }
 
     savedScores.push(entry)
-    localStorage.setItem("savedScores", JSON.stringify(entry))
+    localStorage.setItem("savedScores", JSON.stringify(savedScores))
     console.log(savedScores)
-    clearData();
+    displayScore();
+
 }
 
-function clearData(){
-    initialsInput.value = '';
+function displayScore(){
+    endScreen.classList.add('hide')
+    scoreScreen.classList.remove('hide');
+    var lastScore = document.createElement('h3');
+    var parsed = JSON.parse(localStorage.getItem("savedScores"));
+    console.log(parsed);
+    lastScore.textContent = 'Name: ' + parsed[0].name + ' Score: ' + parsed[0].score;
+    scoreScreen.append(lastScore);
 }
-
 startBtnEl.addEventListener('click', startGame);
 initialsForm.addEventListener("submit", saveScore);
 

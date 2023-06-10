@@ -17,8 +17,6 @@ var time = 60;
 var timer;
 var totalCorrect = 0;
 
-var savedScores = [];
-
 
 function startGame() {
     startScreen.classList.add('hide');
@@ -84,21 +82,26 @@ function endScreenShow(){
     clearInterval(timer);
 }
 
+
 function saveScore (event) {
     event.preventDefault();
-
-    var score = time;
+    var savedScores = [];
+    var score = totalCorrect;
     var name = initialsInput.value;
 
     var entry = {
-        score,
-        name
+        name,
+        score
     }
 
     savedScores.push(entry)
-
     localStorage.setItem("savedScores", JSON.stringify(entry))
+    console.log(savedScores)
+    clearData();
+}
 
+function clearData(){
+    initialsInput.value = '';
 }
 
 startBtnEl.addEventListener('click', startGame);

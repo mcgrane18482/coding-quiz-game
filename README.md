@@ -7,3 +7,4 @@ This webapp is a quiz game for junior developers to test their knowledge on the 
 <img src = "assets/coding-quiz-screenshot.png" alt = "This webpage shows a start button and instructions on how to play the game">
 
 ## URL
+https://mcgrane18482.github.io/coding-quiz-game/ 

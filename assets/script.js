@@ -83,17 +83,24 @@ function endScreenShow(){
     clearInterval(timer);
 }
 
-// When the user clicks submit, we want to save thier name value 
+function getSavedScores (){
+    var rawData = localStorage.getItem('savedScores');
+    var parsed = JSON.parse(rawData);
+    return parsed;
+}
 
-function saveScore (event) {
+function saveAllScores(array){
+    var jsonVal  = JSON.stringify(array);
+    localStorage.setItem('savedScores', jsonVal);
+}
+
+function saveCurrentScore (event) {
     event.preventDefault();
-    var savedScores = [];
-    var score = totalCorrect;
-    var name = initialsInput.value;
+    var savedScores = getSavedScores();
 
     var entry = {
-        name,
-        score
+        name: initialsInput.value,
+        score: totalCorrect
     }
 
     savedScores.push(entry)

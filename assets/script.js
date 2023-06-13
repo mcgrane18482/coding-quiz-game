@@ -83,42 +83,38 @@ function endScreenShow(){
     clearInterval(timer);
 }
 
-function getSavedScores (){
+function getlocalStorage (){
     var rawData = localStorage.getItem('savedScores');
     var parsed = JSON.parse(rawData);
-    return parsed;
+    return parsed || [];
 }
 
-function saveAllScores(array){
-    var jsonVal  = JSON.stringify(array);
-    localStorage.setItem('savedScores', jsonVal);
-}
-
-function saveCurrentScore (event) {
+function addScore(event){
     event.preventDefault();
-    var savedScores = getSavedScores();
-
-    var entry = {
+    var scores = getlocalStorage();
+    var newScore =  {
         name: initialsInput.value,
         score: totalCorrect
     }
 
-    savedScores.push(entry)
-    localStorage.setItem("savedScores", JSON.stringify(savedScores))
-    console.log(savedScores)
-    displayScore();
+    scores.push(newScore);
+    localStorage.setItem('savedScores', JSON.stringify(scores));
+    console.log(scores);
+    displayScores();
 
 }
 
-function displayScore(){
+function displayScores(){
     endScreen.classList.add('hide')
     scoreScreen.classList.remove('hide');
-    var lastScore = document.createElement('h3');
     var parsed = JSON.parse(localStorage.getItem("savedScores"));
     console.log(parsed);
-    lastScore.textContent = 'Name: ' + parsed[0].name + ' Score: ' + parsed[0].score;
-    scoreScreen.append(lastScore);
+    for (var i =0; i < parsed.length; i++){
+        var currentScore = document.createElement('p')
+        currentScore.textContent = 'Name: ' + parsed[i].name + ' Score: ' + parsed[i].score;
+        scoreScreen.append(currentScore);
+    }
 }
-startBtnEl.addEventListener('click', startGame);
-initialsForm.addEventListener("submit", saveScore);
 
+startBtnEl.addEventListener('click', startGame);
+initialsForm.addEventListener("submit", addScore);
